@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  labels:
+    name: redis-service
+    app: demo-voting-app-kubernetes-v1
+spec:
+  ports:
+      - port: 6379
+        targetPort: 6379
+
+  selector:
+    name: redis-voting-app-kubernetes-v1
+    app: demo-voting-app-kubernetes-v1
